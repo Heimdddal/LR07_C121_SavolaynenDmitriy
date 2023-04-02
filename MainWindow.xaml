@@ -18,6 +18,7 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
         <GridSplitter 
             Grid.Column="0"
@@ -25,6 +26,71 @@
             Width="3"
             Background="BlanchedAlmond">
         </GridSplitter>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Orientation="Vertical"
+            >
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBlock
+                Style="{StaticResource GreenPaletteText}"
+                FontSize="20"
+                Grid.Row="1"
+                Grid.Column="0"
+                >
+                Название:
+                </TextBlock>
+                <TextBox
+                Style="{StaticResource GreenPaletteTextBox}"
+                >
+                </TextBox>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBlock
+                Style="{StaticResource GreenPaletteText}"
+                FontSize="20"
+                Grid.Row="1"
+                Grid.Column="0"
+                >
+                Название фирмы:
+                </TextBlock>
+                <TextBox
+                Style="{StaticResource GreenPaletteTextBox}"
+                >
+                </TextBox>
+            </StackPanel>
+            <GroupBox Header="Возраст" 
+                      BorderThickness="0"
+                      Foreground="#606060"
+                      FontSize="20"
+                      Margin="30,5,30,0">
+                <StackPanel>
+                    <RadioButton Name="age_child" >Младенец</RadioButton>
+                    <RadioButton Name="age_low_underschool">Младший дошкольник</RadioButton>
+                    <RadioButton Name="age_high_underschool">Старший дошкольник</RadioButton>
+                    <RadioButton Name="age_low_school">Младший школьник</RadioButton>
+                    <RadioButton Name="age_school">Школьник</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <StackPanel
+                Orientation="Horizontal"
+                >
+                <TextBlock
+                Style="{StaticResource GreenPaletteText}"
+                FontSize="20"
+                Grid.Row="1"
+                Grid.Column="0"
+                >
+                Цена:
+                </TextBlock>
+                <TextBox 
+                Style="{StaticResource GreenPaletteTextBox}"
+                >
+                </TextBox>
+            </StackPanel>
+        </StackPanel>
         <StackPanel 
             Grid.Row="2"
             Grid.ColumnSpan="2"
@@ -35,25 +101,42 @@
             >
             <Button
                 Name="Hello"
-                Style="{StaticResource RoundedBorders}"
+                Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
                 Content="Вывести"/>
             <Button
                 Name="btn2"
-                Style="{StaticResource RoundedBorders}"
+                Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
                 Content="Очистить"
                 />
             <Button
                 Name="btn3"
-                Style="{StaticResource RoundedBorders}"
+                Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
                 Content="Выход"
                 />
         </StackPanel>
-        
+        <TextBlock
+        Style="{StaticResource GreenPaletteText}"
+            Grid.Row="3"
+            Grid.Column="0"
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            >
+            Текущая дата:
+        </TextBlock>
+        <TextBlock
+        Style="{StaticResource GreenPaletteText}"
+            Grid.Row="3"
+            Grid.Column="1"
+            TextAlignment="Right"
+            VerticalAlignment="Center"
+            >
+            Текущее время:
+        </TextBlock>
     </Grid>
 </Window>

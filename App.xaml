@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:LR07_C121_SavolaynenDmitriy"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="RoundedBorders" TargetType="Button">
+        <Style x:Key="GreenPaletteButton" TargetType="Button">
             <Setter Property="FontSize" Value="22"></Setter>
             <Setter Property="Margin" Value="30,0,30,0"></Setter>
             <Setter Property="Background" Value="#E2FA99"></Setter>
@@ -22,6 +22,19 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style x:Key="GreenPaletteText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#606060"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Margin" Value="30,5,10,5"></Setter>
+        </Style>
+        <Style x:Key="GreenPaletteTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#E2FA99"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Foreground" Value="#606060"></Setter>
+            <Setter Property="BorderBrush" Value="BlanchedAlmond"></Setter>
+            <Setter Property="MinWidth" Value="100"></Setter>
+            <Setter Property="MaxHeight" Value="30"></Setter>
         </Style>
     </Application.Resources>
 </Application>
