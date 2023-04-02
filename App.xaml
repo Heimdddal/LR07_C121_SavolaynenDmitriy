@@ -1,0 +1,27 @@
+﻿<Application x:Class="LR07_C121_SavolaynenDmitriy.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LR07_C121_SavolaynenDmitriy"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="RoundedBorders" TargetType="Button">
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="Margin" Value="30,0,30,0"></Setter>
+            <Setter Property="Background" Value="#E2FA99"></Setter>
+            <Setter Property="Foreground" Value="#5C663E"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="30"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
