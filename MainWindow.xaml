@@ -20,7 +20,8 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
-        <GridSplitter 
+        <Image></Image>
+            <GridSplitter 
             Grid.Column="0"
             Grid.Row="1"
             Width="3"
@@ -42,6 +43,7 @@
                 </TextBlock>
                 <TextBox
                 Style="{StaticResource GreenPaletteTextBox}"
+                Width="Auto"
                 >
                 </TextBox>
             </StackPanel>
@@ -72,6 +74,15 @@
                     <RadioButton Name="age_school" VerticalContentAlignment="Center">Школьник</RadioButton>
                 </StackPanel>
             </GroupBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                    Style="{StaticResource GreenPaletteText}"
+                    >
+                    Дата изготовления игрушки:
+                </TextBlock>
+                <DatePicker >
+                </DatePicker>
+            </StackPanel>
             <StackPanel
                 Orientation="Horizontal"
                 >
@@ -119,6 +130,15 @@
             </CheckBox>
         </StackPanel>
         <StackPanel 
+            Grid.Row="1"
+            Grid.Column="1">
+            <TextBlock
+                Width="Auto"
+                Height="Auto"
+                Name="Result_textbox">
+            </TextBlock>
+        </StackPanel>
+        <StackPanel 
             Grid.Row="2"
             Grid.ColumnSpan="2"
             Orientation="Horizontal"
@@ -147,25 +167,32 @@
                 Content="Выход"
                 />
         </StackPanel>
-        <TextBlock
-        Style="{StaticResource GreenPaletteText}"
+        <StackPanel
             Grid.Row="3"
-            Grid.Column="0"
+            Grid.Column="0">
+            <TextBlock
+        Style="{StaticResource GreenPaletteText}"
+
             TextAlignment="Left"
             VerticalAlignment="Center"
             FontSize="24"
+                
             >
             Текущая дата:
-        </TextBlock>
-        <TextBlock
-        Style="{StaticResource GreenPaletteText}"
+            </TextBlock>
+        </StackPanel>
+        <StackPanel
             Grid.Row="3"
-            Grid.Column="1"
+            Grid.Column="1">
+            <TextBlock
+            Style="{StaticResource GreenPaletteText}"
             TextAlignment="Right"
             VerticalAlignment="Center"
             FontSize="24"
             >
             Текущее время:
-        </TextBlock>
+            </TextBlock>
+        </StackPanel>
+        
     </Grid>
 </Window>
