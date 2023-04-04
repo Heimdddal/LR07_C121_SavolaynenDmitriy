@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:LR07_C121_SavolaynenDmitriy"
         mc:Ignorable="d"
         Title="LR07_C121_SavolaynenDmitriy" 
-        Height="600" 
-        Width="1000"
+        Height="650" 
+        Width="1100"
         Background="#95FDBF">
     <Grid Visibility="Visible">
         <Grid.ColumnDefinitions>
@@ -20,47 +20,77 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image></Image>
-            <GridSplitter 
+        <Image  Source="icon.ico" HorizontalAlignment="Left" Margin="5"></Image>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock
+                Style="{StaticResource GreenPaletteText}"
+                HorizontalAlignment="Right"
+                FontSize="24">
+                Лабораторная работа номер 7
+            </TextBlock>
+        </StackPanel>
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="0"
+            Orientation="Horizontal">
+            <ComboBox
+                Margin="50,15,30,15"
+                MinWidth="200">
+                
+            </ComboBox>
+            <ComboBox
+                Margin="30,15,50,15"
+                MinWidth="200">
+
+            </ComboBox>
+        </StackPanel>
+        <GridSplitter 
             Grid.Column="0"
             Grid.Row="1"
             Width="3"
-            Background="BlanchedAlmond">
+            Background="BlanchedAlmond"
+            Panel.ZIndex="0">
         </GridSplitter>
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
             Orientation="Vertical"
             >
-            <StackPanel
-                Orientation="Horizontal">
+            <DockPanel
+                >
                 <TextBlock
                 Style="{StaticResource GreenPaletteText}"
                 Grid.Row="1"
                 Grid.Column="0"
+                MinWidth="300"
                 >
                 Название:
                 </TextBlock>
                 <TextBox
                 Style="{StaticResource GreenPaletteTextBox}"
                 Width="Auto"
+                Margin="0,0,10,0"
+                Name="toy_name_textbox"
                 >
                 </TextBox>
-            </StackPanel>
-            <StackPanel
-                Orientation="Horizontal">
+            </DockPanel>
+            <DockPanel
+               >
                 <TextBlock
                 Style="{StaticResource GreenPaletteText}"
                 Grid.Row="1"
                 Grid.Column="0"
+                MinWidth="300"
                 >
                 Название фирмы:
                 </TextBlock>
                 <TextBox
                 Style="{StaticResource GreenPaletteTextBox}"
+                Margin="0,0,10,0"
+                Name="fabric_name_textbox"
                 >
                 </TextBox>
-            </StackPanel>
+            </DockPanel>
             <GroupBox Header="Возраст" 
                       BorderThickness="0"
                       Foreground="#606060"
@@ -77,32 +107,36 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock
                     Style="{StaticResource GreenPaletteText}"
+                    MinWidth="300"
                     >
                     Дата изготовления игрушки:
                 </TextBlock>
-                <DatePicker >
+                <DatePicker Name="date_toy">
                 </DatePicker>
             </StackPanel>
-            <StackPanel
-                Orientation="Horizontal"
+            <DockPanel
                 >
                 <TextBlock
                 Style="{StaticResource GreenPaletteText}"
                 Grid.Row="1"
                 Grid.Column="0"
+                MinWidth="300"
                 >
                 Цена:
                 </TextBlock>
-                <TextBox 
+                <TextBox
+                Margin="0,0,10,0"
                 Style="{StaticResource GreenPaletteTextBox}"
+                Name="toy_price_textbox"
                 >
                 </TextBox>
-            </StackPanel>
+            </DockPanel>
             <StackPanel
                 Orientation="Horizontal"
                 >
                 <TextBlock
                 Style="{StaticResource GreenPaletteText}"
+                MinWidth="300"
                 >
                  Скидка:
                 </TextBlock>
@@ -113,6 +147,8 @@
                     VerticalAlignment="Center"
                     VerticalContentAlignment="Center"
                     HorizontalContentAlignment="Center"
+                    Background="#E2FA99"
+                    Name="discount_combo"
                     >
                     <TextBlock FontSize="14">нет</TextBlock>
                     <TextBlock FontSize="14">3%</TextBlock>
@@ -121,22 +157,28 @@
                     <TextBlock FontSize="14">15%</TextBlock>
                 </ComboBox>
             </StackPanel>
-            <CheckBox
+            <ToggleButton
                 Margin="30,0,30,0"
                 FontSize="20"
                 VerticalContentAlignment="Center"
-                Foreground="#606060">
+                Foreground="#606060"
+                Background="#E2FA99"
+                Name="toggle_on_stock">
                 Наличие на складе
-            </CheckBox>
+            </ToggleButton>
         </StackPanel>
         <StackPanel 
             Grid.Row="1"
             Grid.Column="1">
-            <TextBlock
+            <ListBox
                 Width="Auto"
                 Height="Auto"
-                Name="Result_textbox">
-            </TextBlock>
+                Name="Result_textbox"
+                Background="#95FDBF"
+                MinHeight="400"
+                
+                >
+            </ListBox>
         </StackPanel>
         <StackPanel 
             Grid.Row="2"
@@ -169,10 +211,10 @@
         </StackPanel>
         <StackPanel
             Grid.Row="3"
-            Grid.Column="0">
+            Grid.Column="0"
+            Panel.ZIndex="3">
             <TextBlock
-        Style="{StaticResource GreenPaletteText}"
-
+            Style="{StaticResource GreenPaletteText}"  
             TextAlignment="Left"
             VerticalAlignment="Center"
             FontSize="24"
@@ -193,6 +235,5 @@
             Текущее время:
             </TextBlock>
         </StackPanel>
-        
     </Grid>
 </Window>
