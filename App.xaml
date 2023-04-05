@@ -28,6 +28,7 @@
             <Setter Property="Foreground" Value="#606060"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="Margin" Value="30,5,10,5"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
         </Style>
         <Style x:Key="GreenPaletteTextBox" TargetType="TextBox">
             <Setter Property="Background" Value="#E2FA99"></Setter>
