@@ -48,5 +48,13 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="GreenTextListBox" TargetType="{x:Type ListBox}">
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"></Setter>
+            <Setter Property="Foreground" Value="#5C663E"></Setter>
+            <Setter Property="Background" Value="#95FDBF"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

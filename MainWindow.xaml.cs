@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LR07_C121_SavolaynenDmitriy
 {
@@ -20,9 +21,15 @@ namespace LR07_C121_SavolaynenDmitriy
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer _timer;
         public MainWindow()
         {
             InitializeComponent();
+
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
         }
         public string age_out = "Младенец";
         public string discount_out = "нет";
@@ -36,6 +43,11 @@ namespace LR07_C121_SavolaynenDmitriy
             public string price;
             public string discount;
             public bool on_stock;
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Current_date_textblock.Text = DateTime.Now.ToString("dd:MM:yyyy");
+            Current_time_textblock.Text = DateTime.Now.ToString("HH:mm:ss");
         }
         private void Exit_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -102,6 +114,45 @@ namespace LR07_C121_SavolaynenDmitriy
         private void combo_box_mouseEnterLeave(object sender, MouseEventArgs e)
         {
             discount_out = discount_combo.Text;
+        }
+
+        private void ChangeDateTimeMouse(object sender, MouseEventArgs e)
+        {
+            
+        }
+        private void combo_box_title_size_enterleave(object sender, MouseEventArgs e)
+        {
+            if (FontSize_title.Text != "")
+            {
+                Title.FontSize = int.Parse(FontSize_title.Text);
+            }
+        }
+        private void ChangeTitleFontPeculiarities(object sender, MouseEventArgs e)
+        {
+            if (Title_bold.IsChecked == true)
+            {
+                Title.FontWeight = FontWeights.Bold;
+            }
+            else
+            {
+                Title.FontWeight = FontWeights.Normal;
+            }
+            if (Title_italic.IsChecked == true)
+            {
+                Title.FontStyle = FontStyles.Italic;
+            }
+            else
+            {
+                Title.FontStyle = FontStyles.Normal;
+            }
+            if (Title_unreline.IsChecked == true)
+            {
+                Title.TextDecorations = TextDecorations.Underline;
+            }
+            else
+            {
+                Title.TextDecorations = null;
+            }
         }
     }
 }

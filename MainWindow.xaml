@@ -8,7 +8,9 @@
         Title="LR07_C121_SavolaynenDmitriy" 
         Height="650" 
         Width="1100"
-        Background="#95FDBF">
+        MinHeight="600"
+        MinWidth="1050"
+        Background="#95FDBF" MouseEnter="ChangeDateTimeMouse" MouseLeave="ChangeDateTimeMouse">
     <Grid Visibility="Visible">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -20,16 +22,40 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="0.6*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Rectangle 
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            Grid.Column="0"
+            Fill="#86E38C">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Black" Direction="320" ShadowDepth="1"></DropShadowEffect>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Fill="#86E38C"
+            >
+            <Rectangle.Effect>
+                <DropShadowEffect Color="Black" Direction="320" ShadowDepth="1"></DropShadowEffect>
+            </Rectangle.Effect>
+        </Rectangle>
+        <StackPanel
+            VerticalAlignment="Center"
+            Orientation="Horizontal" 
+            HorizontalAlignment="Right">
             <Image  Source="icon.ico" HorizontalAlignment="Left" Margin="5"></Image>
             <StackPanel Orientation="Vertical">
-                <ToolBar MinWidth="100">
+                <ToolBar MinWidth="100"
+                 MouseEnter="ChangeTitleFontPeculiarities"
+                 MouseLeave="ChangeTitleFontPeculiarities">
                     <ToggleButton MinHeight="20" MinWidth="20" FontFamily="Italic" FontSize="20" FontWeight="Bold" FontStyle="Italic" Name="Title_bold">B</ToggleButton>
                     <ToggleButton MinHeight="20" MinWidth="20" FontFamily="Italic" FontSize="20" FontStyle="Italic" Name="Title_italic">I</ToggleButton>
                     <ToggleButton MinHeight="20" MinWidth="20" FontFamily="Italic" FontSize="22" FontStyle="Italic" Name="Title_unreline">⍛</ToggleButton>
                 </ToolBar>
-                <ComboBox MinHeight="40" Name="FontSize_title">
+                <ComboBox MinHeight="40" Name="FontSize_title"
+                    MouseEnter="combo_box_title_size_enterleave" 
+                    MouseLeave="combo_box_title_size_enterleave">
                     <TextBlock FontSize="18">16</TextBlock>
                     <TextBlock FontSize="18">20</TextBlock>
                     <TextBlock FontSize="18">24</TextBlock>
@@ -39,7 +65,8 @@
                 Style="{StaticResource GreenPaletteText}"
                 Margin="5,5,5,5"
                 HorizontalAlignment="Right"
-                FontSize="24">
+                FontSize="24"
+                Name="Title">
                 Лабораторная работа номер 7
             </TextBlock>
 
@@ -48,15 +75,43 @@
             Grid.Column="1"
             Grid.Row="0"
             Orientation="Horizontal">
+            <Menu Margin="50,15,30,15" MaxHeight="50" MinHeight="50" HorizontalContentAlignment="Stretch">
+                <MenuItem MaxHeight="50" MinHeight="50" Header="Меню" MinWidth="200" HorizontalAlignment="Center" FontSize="24">
+                    <MenuItem Header="Очистить" Click="Clear_btn_Click" />
+                    <MenuItem Header="Закрыть" Click="Exit_btn_Click" />
+                    <MenuItem Header="Вставить" Click="Output_btn_Click"/>
+                </MenuItem>
+            </Menu>
+
             <ComboBox
-                Margin="50,15,30,15"
-                MinWidth="200">
-                
-            </ComboBox>
-            <ComboBox
+                Name="Color_schemes"
                 Margin="30,15,50,15"
                 MinWidth="200">
-
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FAE2" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#D6A4FA" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B7A69E" Margin="5"></Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                </StackPanel>
             </ComboBox>
         </StackPanel>
         <GridSplitter 
@@ -165,8 +220,10 @@
                     VerticalContentAlignment="Center"
                     HorizontalContentAlignment="Center"
                     Background="#E2FA99"
-                    Name="discount_combo" RenderTransformOrigin="68.166,25.699" MouseEnter="combo_box_mouseEnterLeave" MouseLeave="combo_box_mouseEnterLeave"
-                    
+                    Name="discount_combo" 
+                    RenderTransformOrigin="68.166,25.699" 
+                    MouseEnter="combo_box_mouseEnterLeave" 
+                    MouseLeave="combo_box_mouseEnterLeave"
                     >
                     <TextBlock FontSize="14">нет</TextBlock>
                     <TextBlock FontSize="14">3%</TextBlock>
@@ -189,12 +246,17 @@
             Grid.Row="1"
             Grid.Column="1">
             <ListBox
+                Style="{StaticResource GreenTextListBox}"
                 Width="Auto"
                 Height="Auto"
-                Name="Result_Listbox"
-                Background="#95FDBF"
-                MinHeight="400"
+                x:Name="Result_Listbox"
+                MinHeight="400" d:ItemsSource="{d:SampleData ItemCount=5}"
                 >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
         <StackPanel 
@@ -210,23 +272,36 @@
                 Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
-                Content="Вывести" Click="Output_btn_Click"/>
+                Content="Вывести" Click="Output_btn_Click">
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" Direction="310" ShadowDepth="1"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
             <Button
                 Name="Clear_btn"
                 Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
                 Content="Очистить" Click="Clear_btn_Click"
-                />
+                >
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" Direction="310" ShadowDepth="1"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
             <Button
                 Name="Exit_btn"
                 Style="{StaticResource GreenPaletteButton}"
                 Height="60"
                 Width="160"
-                Content="Выход" Click="Exit_btn_Click"
-                />
+                Content="Выход" Click="Exit_btn_Click" Cursor="Pen"
+                >
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" Direction="310" ShadowDepth="1"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
         </StackPanel>
         <StackPanel
+            Orientation="Horizontal"
             Grid.Row="3"
             Grid.Column="0"
             Panel.ZIndex="3">
@@ -235,21 +310,40 @@
             TextAlignment="Left"
             VerticalAlignment="Center"
             FontSize="24"
-                
             >
             Текущая дата:
             </TextBlock>
+            <TextBlock
+            Style="{StaticResource GreenPaletteText}"  
+            TextAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="24"
+            Name="Current_date_textblock">
+                
+            </TextBlock>
         </StackPanel>
         <StackPanel
+            Orientation="Horizontal"
             Grid.Row="3"
-            Grid.Column="1">
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            >
             <TextBlock
             Style="{StaticResource GreenPaletteText}"
             TextAlignment="Right"
             VerticalAlignment="Center"
             FontSize="24"
+            
             >
             Текущее время:
+            </TextBlock>
+            <TextBlock
+            Style="{StaticResource GreenPaletteText}"
+            TextAlignment="Right"
+            VerticalAlignment="Center"
+            Name="Current_time_textblock"
+            FontSize="24"
+            >
             </TextBlock>
         </StackPanel>
     </Grid>
