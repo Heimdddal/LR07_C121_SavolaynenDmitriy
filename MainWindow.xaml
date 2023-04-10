@@ -90,7 +90,7 @@
                 Name="Color_schemes"
                 Margin="30,15,50,15"
                 MinWidth="200" SelectionChanged="StyleBox_SelectionChange">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel x:Name="GreenCircles" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
                     <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
                     <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
@@ -100,20 +100,15 @@
                     <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#D6A4FA" Margin="5"></Ellipse>
                     <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B7A69E" Margin="5"></Ellipse>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                <StackPanel x:Name="PorscheCircles" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#62A1D9" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#F24822" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#262626" Margin="5"></Ellipse>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#95FCB2" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#B2FAA0" Margin="5"></Ellipse>
-                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#E2FA98" Margin="5"></Ellipse>
+                <StackPanel x:Name="BananaFishCircles" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#F8E50C" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#DCD39E" Margin="5"></Ellipse>
+                    <Ellipse Width="30" Height="30" Stroke="LightSteelBlue" Fill="#DB9D00" Margin="5"></Ellipse>
                 </StackPanel>
             </ComboBox>
         </StackPanel>
@@ -128,6 +123,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Orientation="Vertical"
+            Name ="MainStack"
             >
             <DockPanel
                 >

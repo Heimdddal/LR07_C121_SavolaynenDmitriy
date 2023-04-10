@@ -58,7 +58,7 @@
             <Setter Property="FontSize" Value="22"></Setter>
             <Setter Property="Margin" Value="30,0,30,0"></Setter>
             <Setter Property="Background" Value="#FF99E2"></Setter>
-            <Setter Property="Foreground" Value="#5C663E"></Setter>
+            <Setter Property="Foreground" Value="#121212"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Cursor" Value="Pen"></Setter>
             <Setter Property="Template">
@@ -74,41 +74,61 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="SakuraPaletteText" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#606060"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Margin" Value="30,5,10,5"></Setter>
-            <Setter Property="FontWeight" Value="SemiBold"></Setter>
-        </Style>
-        <Style x:Key="SakuraPaletteTextBox" TargetType="TextBox">
-            <Setter Property="Background" Value="#FF99E2"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Foreground" Value="#606060"></Setter>
-            <Setter Property="BorderBrush" Value="BlanchedAlmond"></Setter>
-            <Setter Property="MinWidth" Value="100"></Setter>
-            <Setter Property="MaxHeight" Value="30"></Setter>
-        </Style>
-        <!--<Style x:Key="CenteredTextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="5" />
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type StackPanel}}, Path=Orientation}" Value="Vertical">
-                    <Setter Property="Width" Value="200" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>-->
-        <Style x:Key="SakuraTextListBox" TargetType="{x:Type ListBox}">
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"></Setter>
-            <Setter Property="Foreground" Value="#5C663E"></Setter>
-            <Setter Property="Background" Value="#95FDBF"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
-            <Setter Property="FontWeight" Value="SemiBold"></Setter>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"></Setter>
-        </Style>
         <Style x:Key="SakuraPaletteMenu" TargetType="{x:Type Menu}">
             <Setter Property="Background" Value="#FF99E2"></Setter>
-            <Setter Property="Foreground" Value="#5C663E"></Setter>
+            <Setter Property="Foreground" Value="#121212"></Setter>
+        </Style>
+
+
+        <Style x:Key="PorschePaletteButton" TargetType="Button">
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="Margin" Value="30,0,30,0"></Setter>
+            <Setter Property="Background" Value="#F2F2F2"></Setter>
+            <Setter Property="Foreground" Value="#262626"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Cursor" Value="Pen"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="30"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PorschePaletteMenu" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="#F2F2F2"></Setter>
+            <Setter Property="Foreground" Value="#262626"></Setter>
+        </Style>
+
+
+        <Style x:Key="BananaFishPaletteButton" TargetType="Button">
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="Margin" Value="30,0,30,0"></Setter>
+            <Setter Property="Background" Value="#F8E50C"></Setter>
+            <Setter Property="Foreground" Value="#36290B"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Cursor" Value="Pen"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="30"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BananaFishPaletteMenu" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="#F8E50C"></Setter>
+            <Setter Property="Foreground" Value="#262626"></Setter>
         </Style>
     </Application.Resources>
 </Application>

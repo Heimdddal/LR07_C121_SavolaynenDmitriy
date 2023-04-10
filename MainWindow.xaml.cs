@@ -67,7 +67,7 @@ namespace LR07_C121_SavolaynenDmitriy
             user_toy.fabric_name = fabric_name_textbox.Text.ToString();
             user_toy.date = date_toy.Text.ToString();
             user_toy.price = toy_price_textbox.Text.ToString();
-            if(toggle_on_stock.IsChecked == true) user_toy.on_stock = true;
+            if (toggle_on_stock.IsChecked == true) user_toy.on_stock = true;
             else user_toy.on_stock = false;
             user_toy.age = age_out;
             user_toy.discount = discount_out;
@@ -155,10 +155,10 @@ namespace LR07_C121_SavolaynenDmitriy
         {
             if (ComboBox.SelectedItemProperty.Name == "SakuraCircles")
             {
-                
+
             }
         }
-        private void ChangeButtonStyleInGrid(string style)
+        private void ChangeButtonStyleInGrid(string style, string menuStyle, Brush textColor, Brush textBoxColor, Brush backgroundTextBoxColor)
         {
             var grid = (Grid)FindName("Base");
 
@@ -167,6 +167,19 @@ namespace LR07_C121_SavolaynenDmitriy
                 if (child is Button button)
                 {
                     button.Style = (Style)FindResource(style);
+                }
+                else if (child is TextBlock textBlock)
+                {
+                    textBlock.Foreground = textColor;
+                }
+                else if (child is TextBox textBox)
+                {
+                    textBox.Foreground = textBoxColor;
+                    textBox.Background = backgroundTextBoxColor;
+                }
+                else if (child is Menu menu)
+                {
+                    menu.Style = (Style)FindResource(menuStyle);
                 }
             }
         }
@@ -185,19 +198,127 @@ namespace LR07_C121_SavolaynenDmitriy
             }
         }
 
+        private void SakuraPalette()
+        {
+            Brush textColor = (Brush)new BrushConverter().ConvertFrom("#4D4D4D");
+            Brush textBoxColor = (Brush)new BrushConverter().ConvertFrom("#F0F1F1");
+            Brush backgroundTextBoxColor = (Brush)new BrushConverter().ConvertFrom("#755345");
+            Brush basedPeach = (Brush)new BrushConverter().ConvertFrom("#FFDCB8");
+            Brush rectBrown = (Brush)new BrushConverter().ConvertFrom("#755345");
+            Brush titleWhite = (Brush)new BrushConverter().ConvertFrom("#F0F1F1");
+            Brush buttonPink = (Brush)new BrushConverter().ConvertFrom("#FF99E2");
+            Result_Listbox.Background = basedPeach;
+            Base.Background = basedPeach;
+            ChangeButtonStyleInGrid("SakuraPaletteButton", "SakuraPaletteMenu", textColor, textBoxColor, backgroundTextBoxColor);
+            Title.Foreground = titleWhite;
+            Upper.Fill = rectBrown;
+            Lower.Fill = rectBrown;
+            toggle_on_stock.Background = buttonPink;
+            toggle_on_stock.Foreground = textBoxColor;
+            Result_Listbox.Foreground = textColor;
+            
+        }
+
+        private void GreenPalette()
+        {
+            Brush textColor = (Brush)new BrushConverter().ConvertFrom("#606060");
+            Brush textBoxColor = (Brush)new BrushConverter().ConvertFrom("#606060");
+            Brush backgroundTextBoxColor = (Brush)new BrushConverter().ConvertFrom("#E2FA99");
+            Brush basedGreen = (Brush)new BrushConverter().ConvertFrom("#95FDBF");
+            Brush rectGreen = (Brush)new BrushConverter().ConvertFrom("#86E38C");
+            Brush titleWhite = (Brush)new BrushConverter().ConvertFrom("#606060");
+            Brush buttonGreen = (Brush)new BrushConverter().ConvertFrom("#E2FA99");
+            Result_Listbox.Background = basedGreen;
+            Base.Background = basedGreen;
+            ChangeButtonStyleInGrid("GreenPaletteButton", "GreenPaletteMenu", textColor, textBoxColor, backgroundTextBoxColor);
+            Title.Foreground = titleWhite;
+            Upper.Fill = rectGreen;
+            Lower.Fill = rectGreen;
+            toggle_on_stock.Background = buttonGreen;
+            toggle_on_stock.Foreground = textBoxColor;
+            Result_Listbox.Foreground = textColor;
+
+        }
+
+        private void PorschePalette()
+        {
+            Brush textColor = (Brush)new BrushConverter().ConvertFrom("#291F08");
+            Brush textBoxColor = (Brush)new BrushConverter().ConvertFrom("#291F08");
+            Brush backgroundTextBoxColor = (Brush)new BrushConverter().ConvertFrom("#2E88E6");
+            Brush basedBlue = (Brush)new BrushConverter().ConvertFrom("#2ED3E6");
+            Brush rectOrange = (Brush)new BrushConverter().ConvertFrom("#F24822");
+            Brush titleBlack = (Brush)new BrushConverter().ConvertFrom("#291F08");
+            Brush buttonWhite = (Brush)new BrushConverter().ConvertFrom("#F2F2F2");
+            Result_Listbox.Background = basedBlue;
+            Base.Background = basedBlue;
+            ChangeButtonStyleInGrid("PorschePaletteButton", "PorschePaletteMenu", textColor, textBoxColor, backgroundTextBoxColor);
+            Title.Foreground = titleBlack;
+            Upper.Fill = rectOrange;
+            Lower.Fill = rectOrange;
+            toggle_on_stock.Background = buttonWhite;
+            toggle_on_stock.Foreground = textBoxColor;
+            Result_Listbox.Foreground = textColor;
+
+        }
+
+        private void BananaFishPalette()
+        {
+            Brush textColor = (Brush)new BrushConverter().ConvertFrom("#36290B");
+            Brush textBoxColor = (Brush)new BrushConverter().ConvertFrom("#36290B");
+            Brush backgroundTextBoxColor = (Brush)new BrushConverter().ConvertFrom("#F0E900");
+            Brush basedColor = (Brush)new BrushConverter().ConvertFrom("#DCD39E");
+            Brush rectColor = (Brush)new BrushConverter().ConvertFrom("#F0BC00");
+            Brush titleColor = (Brush)new BrushConverter().ConvertFrom("#36290B");
+            Brush buttonColor = (Brush)new BrushConverter().ConvertFrom("#F8E50C");
+            Result_Listbox.Background = basedColor;
+            Base.Background = basedColor;
+            ChangeButtonStyleInGrid("BananaFishPaletteButton", "BananaFishPaletteMenu", textColor, textBoxColor, backgroundTextBoxColor);
+            Title.Foreground = titleColor;
+            Upper.Fill = rectColor;
+            Lower.Fill = rectColor;
+            toggle_on_stock.Background = buttonColor;
+            toggle_on_stock.Foreground = textBoxColor;
+            Result_Listbox.Foreground = textColor;
+
+        }
         private void StyleBox_SelectionChange(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
             StackPanel selectedStackPanel = comboBox.SelectedItem as StackPanel;
             if (selectedStackPanel != null && selectedStackPanel.Name == "SakuraCircles")
             {
-                Brush basedBlue = (Brush) new BrushConverter().ConvertFrom("#FFDCB8");
-                Brush rectBrown = (Brush)new BrushConverter().ConvertFrom("#755345");
-                Result_Listbox.Background = basedBlue;
-                Base.Background = basedBlue;
-                ChangeButtonStyleInGrid("SakuraPaletteButton");
-                Upper.Fill = rectBrown;
-                Lower.Fill = rectBrown;
+                SakuraPalette();
+            }
+            else if (selectedStackPanel != null && selectedStackPanel.Name == "GreenCircles")
+            {
+                GreenPalette();
+            }
+            else if (selectedStackPanel != null && selectedStackPanel.Name == "PorscheCircles")
+            {
+                PorschePalette();
+            }
+            else if (selectedStackPanel != null && selectedStackPanel.Name == "BananaFishCircles")
+            {
+                BananaFishPalette();
+            }
+        }
+
+        public void ColorizeElements(Brush textColor, Brush textBoxColor, Brush backgroundTextBoxColor)
+        {
+            // получаем доступ к StackPanel и Grid по имени
+            //StackPanel stackPanel = (StackPanel)Application.Current.MainWindow.FindName("stackPanelName");
+            Grid grid = (Grid)Application.Current.MainWindow.FindName("Base");
+            foreach (var element in grid.Children)
+            {
+                if (element is TextBlock textBlock)
+                {
+                    textBlock.Foreground = textColor;
+                }
+                else if (element is TextBox textBox)
+                {
+                    textBox.Foreground = textBoxColor;
+                    textBox.Background = backgroundTextBoxColor;
+                }
             }
         }
     }
