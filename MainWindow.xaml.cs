@@ -61,6 +61,7 @@ namespace LR07_C121_SavolaynenDmitriy
 
         private void Output_btn_Click(object sender, RoutedEventArgs e)
         {
+            string result;
             Toy_info user_toy = new Toy_info();
             user_toy.name = toy_name_textbox.Text.ToString();
             user_toy.fabric_name = fabric_name_textbox.Text.ToString();
@@ -71,7 +72,8 @@ namespace LR07_C121_SavolaynenDmitriy
             user_toy.age = age_out;
             user_toy.discount = discount_out;
             double discouted_price = price_with_discount(user_toy.discount, int.Parse(user_toy.price));
-            string result = "Игрушка " + user_toy.name + " изготовлена на " + user_toy.fabric_name + ". Играть может " + user_toy.age + ". Изготовлена " + user_toy.date + ". Стоимость:" + discouted_price +" (" + user_toy.price + ")";
+            if (user_toy.on_stock) result = "Игрушка " + user_toy.name + " изготовлена на " + user_toy.fabric_name + ". Играть может " + user_toy.age + ". Изготовлена " + user_toy.date + ". Стоимость:" + discouted_price + " (" + user_toy.price + ")" + ". Есть в наличии на складе.";
+            else result = "Игрушка " + user_toy.name + " изготовлена на " + user_toy.fabric_name + ". Играть может " + user_toy.age + ". Изготовлена " + user_toy.date + ". Стоимость:" + discouted_price + " (" + user_toy.price + ")" + ". Нет в наличии на складе.";
             Result_Listbox.Items.Add(result);
         }
         private double price_with_discount(string discount, double price)
@@ -115,11 +117,6 @@ namespace LR07_C121_SavolaynenDmitriy
         {
             discount_out = discount_combo.Text;
         }
-
-        private void ChangeDateTimeMouse(object sender, MouseEventArgs e)
-        {
-            
-        }
         private void combo_box_title_size_enterleave(object sender, MouseEventArgs e)
         {
             if (FontSize_title.Text != "")
@@ -152,6 +149,55 @@ namespace LR07_C121_SavolaynenDmitriy
             else
             {
                 Title.TextDecorations = null;
+            }
+        }
+        private void ChangeToSakuraPalette(object sender, MouseEventArgs e)
+        {
+            if (ComboBox.SelectedItemProperty.Name == "SakuraCircles")
+            {
+                
+            }
+        }
+        private void ChangeButtonStyleInGrid(string style)
+        {
+            var grid = (Grid)FindName("Base");
+
+            foreach (var child in GetAllChildren(grid))
+            {
+                if (child is Button button)
+                {
+                    button.Style = (Style)FindResource(style);
+                }
+            }
+        }
+
+        private IEnumerable<DependencyObject> GetAllChildren(DependencyObject parent)
+        {
+            var count = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < count; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                yield return child;
+                foreach (var grandChild in GetAllChildren(child))
+                {
+                    yield return grandChild;
+                }
+            }
+        }
+
+        private void StyleBox_SelectionChange(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            StackPanel selectedStackPanel = comboBox.SelectedItem as StackPanel;
+            if (selectedStackPanel != null && selectedStackPanel.Name == "SakuraCircles")
+            {
+                Brush basedBlue = (Brush) new BrushConverter().ConvertFrom("#FFDCB8");
+                Brush rectBrown = (Brush)new BrushConverter().ConvertFrom("#755345");
+                Result_Listbox.Background = basedBlue;
+                Base.Background = basedBlue;
+                ChangeButtonStyleInGrid("SakuraPaletteButton");
+                Upper.Fill = rectBrown;
+                Lower.Fill = rectBrown;
             }
         }
     }
