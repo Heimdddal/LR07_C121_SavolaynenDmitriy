@@ -303,23 +303,35 @@ namespace LR07_C121_SavolaynenDmitriy
             }
         }
 
-        public void ColorizeElements(Brush textColor, Brush textBoxColor, Brush backgroundTextBoxColor)
+        private void change_font_plus(object sender, RoutedEventArgs e)
         {
-            // получаем доступ к StackPanel и Grid по имени
-            //StackPanel stackPanel = (StackPanel)Application.Current.MainWindow.FindName("stackPanelName");
-            Grid grid = (Grid)Application.Current.MainWindow.FindName("Base");
-            foreach (var element in grid.Children)
+            if (Result_Listbox.FontSize < 32)
             {
-                if (element is TextBlock textBlock)
-                {
-                    textBlock.Foreground = textColor;
-                }
-                else if (element is TextBox textBox)
-                {
-                    textBox.Foreground = textBoxColor;
-                    textBox.Background = backgroundTextBoxColor;
-                }
+                Result_Listbox.FontSize = Result_Listbox.FontSize + 2;
             }
+        }
+
+        private void change_font_minus(object sender, RoutedEventArgs e)
+        {
+            if (Result_Listbox.FontSize > 10)
+            {
+                Result_Listbox.FontSize = Result_Listbox.FontSize - 2;
+            }        
+        }
+
+        private void Title_top_aligment(object sender, RoutedEventArgs e)
+        {
+            Title.VerticalAlignment = VerticalAlignment.Top;
+        }
+
+        private void Title_center_aligment(object sender, RoutedEventArgs e)
+        {
+            Title.VerticalAlignment = VerticalAlignment.Center;
+        }
+
+        private void Title_bottom_aligment(object sender, RoutedEventArgs e)
+        {
+            Title.VerticalAlignment = VerticalAlignment.Bottom;
         }
     }
 }

@@ -44,7 +44,6 @@
             <Setter Property="Background" Value="#95FDBF"></Setter>
             <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="FontWeight" Value="SemiBold"></Setter>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"></Setter>
         </Style>
         <Style x:Key="GreenPaletteMenu" TargetType="{x:Type Menu}">
             <Setter Property="Background" Value="#E2FA99"></Setter>

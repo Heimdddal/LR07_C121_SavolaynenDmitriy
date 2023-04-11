@@ -69,7 +69,8 @@
                 Margin="5,5,5,5"
                 HorizontalAlignment="Right"
                 FontSize="24"
-                Name="Title">
+                Name="Title"
+                VerticalAlignment="Top">
                 Лабораторная работа номер 7
             </TextBlock>
 
@@ -78,14 +79,20 @@
             Grid.Column="1"
             Grid.Row="0"
             Orientation="Horizontal">
-            <Menu Style="{StaticResource GreenPaletteMenu}" Margin="50,15,30,15" MaxHeight="50" MinHeight="50" HorizontalContentAlignment="Stretch">
+            <Menu Style="{StaticResource GreenPaletteMenu}" Margin="50,15,0,15" MaxHeight="50" MinHeight="50" HorizontalContentAlignment="Stretch">
                 <MenuItem MaxHeight="50" MinHeight="50" Header="Меню" MinWidth="200" HorizontalAlignment="Center" FontSize="24">
-                    <MenuItem Header="Очистить" Click="Clear_btn_Click" />
-                    <MenuItem Header="Закрыть" Click="Exit_btn_Click" />
-                    <MenuItem Header="Вставить" Click="Output_btn_Click"/>
+                    <MenuItem Header="Результат">
+                        <MenuItem Header="Очистить" Click="Clear_btn_Click" />
+                        <MenuItem Header="Закрыть" Click="Exit_btn_Click" />
+                        <MenuItem Header="Вставить" Click="Output_btn_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Выравнивание">
+                        <MenuItem Header="Верх" Click="Title_top_aligment"></MenuItem>
+                        <MenuItem Header="Центр" Click="Title_center_aligment"></MenuItem>
+                        <MenuItem Header="Низ" Click="Title_bottom_aligment"></MenuItem>
+                    </MenuItem>
                 </MenuItem>
             </Menu>
-
             <ComboBox
                 Name="Color_schemes"
                 Margin="30,15,50,15"
@@ -244,19 +251,28 @@
         <StackPanel 
             Grid.Row="1"
             Grid.Column="1">
-            <ListBox
+            <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
+                <ListBox
                 Style="{StaticResource GreenTextListBox}"
                 Width="Auto"
                 Height="Auto"
                 x:Name="Result_Listbox"
-                MinHeight="400" d:ItemsSource="{d:SampleData ItemCount=5}"
+                MinHeight="400"
                 >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Очистить" Click="Clear_btn_Click"></MenuItem>
+                        <MenuItem Header="Увеличить" Click="change_font_plus"></MenuItem>
+                        <MenuItem Header="Уменьшить" Click="change_font_minus"></MenuItem>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
             </ListBox>
+            </ScrollViewer>
         </StackPanel>
         <StackPanel 
             Grid.Row="2"
